@@ -1,0 +1,9 @@
+.reader {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: center;
+}
