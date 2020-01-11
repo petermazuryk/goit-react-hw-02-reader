@@ -4,6 +4,7 @@ import Controls from '../Controls/Controls';
 import Counter from '../Counter/Counter';
 import Publication from '../Publication/Publication';
 import style from './Reader.module.css';
+import publications from '../publications';
 
 export default class Reader extends Component {
   static defaultProps = {
@@ -37,19 +38,18 @@ export default class Reader extends Component {
 
   render() {
     const { value, textNum } = this.state;
-    const { publicationsItems } = this.props;
 
     return (
       <div className={style.reader}>
         <h1 className={style.text}>Reader</h1>
         <Controls
           start={value}
-          end={publicationsItems.length - 1}
+          end={publications.length - 1}
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
         />
-        <Counter value={value} initialValue={publicationsItems} />
-        <Publication publications={publicationsItems} textNum={textNum} />
+        <Counter value={value} initialValue={publications} />
+        <Publication publications={publications} textNum={textNum} />
       </div>
     );
   }
